@@ -1,5 +1,10 @@
 
 // Define the palettes for the theme in this file.
 
-$gallery-primary: rebeccapurple;
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+
+$gallery-primary: #6ca1f7;
 $gallery-primary-font: white;
+$gallery-darker: #0d47a1;
+$gallery-secondary: #292c2f;
