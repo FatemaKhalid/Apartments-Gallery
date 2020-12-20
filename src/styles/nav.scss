@@ -4,16 +4,19 @@
     display: flex;
     align-items: center;
     
-    background: $gallery-primary;
-    color: $gallery-primary-font;
-    font-family: Helvetica;
-    font-weight: 300;
+    // background: $gallery-primary;
+    color: $gallery-secondary;
+    font-family: Roboto;
+    font-weight: bold;
+    // border-bottom: 1px solid $gallery-secondary;
+    box-shadow: 1px 5px #64626210;
 }
 
 .navbar__title {
     margin-right: auto;
     font-size: 150%;
     padding: 12px 16px;
+    color: $gallery-primary;
 }
 
 .navbar__item {
