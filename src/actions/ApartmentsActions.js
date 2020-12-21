@@ -10,6 +10,7 @@ export const fetchApartments = () => {
         .then(response => {
           // response.data is the apartments
           const apartments = response.data
+          console.log(apartments.offers[0]);
           dispatch(fetchApartmentsSuccess(apartments))
         })
         .catch(error => {

@@ -9,10 +9,10 @@ function Footer() {
 
 			<div className="footer-right">
 
-				<a href={''}><FontAwesomeIcon icon={faFacebookSquare} /></a>
-				<a href={''}><FontAwesomeIcon icon={faTwitterSquare} /></a>
-				<a href={''}><FontAwesomeIcon icon={faLinkedin} /></a>
-				<a href={''}><FontAwesomeIcon icon={faGithubSquare} /></a>
+				<a><FontAwesomeIcon icon={faFacebookSquare} /></a>
+				<a><FontAwesomeIcon icon={faTwitterSquare} /></a>
+				<a><FontAwesomeIcon icon={faLinkedin} /></a>
+				<a><FontAwesomeIcon icon={faGithubSquare} /></a>
 
 			</div>
 
