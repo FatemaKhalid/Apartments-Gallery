@@ -9,7 +9,7 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        width: 40%;
+        width: 25%;
         min-width: 420px;
         margin: 25px;
         padding: 25px;
@@ -22,69 +22,94 @@
         .apt-row {
             margin: auto;
         }
+
     }
     
+    .apt-row-data{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .rating-circ{
+        width: 50%;
+
+        .CircularProgressbar{
+            font-size:0.5em;
+        }
+        .CircularProgressbar-trail {
+            stroke: $rating-trail;
+            stroke-width: 1em;
+        }
+        
+        .CircularProgressbar-path{
+            stroke: $gallery-primary;
+            stroke-width: 1em;
+        }
+
+        .CircularProgressbar-text {
+            fill: $gallery-primary;
+        }
+
+    }
   
+    .apartment-img {
+        width: 80%;
+      img {
+          width: 100%;
+          border-radius: 7px 0 0 7px;
+      }
+    }
+    
+    .apartment-info {
+      width: 70%;
+      border-radius: 0 7px 10px 7px;
+      background-color: $gallery-primary-font;
+      
+      .apartment-text{
+          
+          .booking-extra {
+              color: black;
+              text-decoration: underline;
+          }
+    
+          h1 {
+              height: 30%;
+              font-size: 18px;
+              color: #474747;
+              font-family: 'Bentham', serif;
+          }
+    
+          p {
+              font-family: 'Playfair Display', serif;
+              color: #8d8d8d;
+              font-size: 15px;
+              font-weight: lighter;
+              overflow: hidden;
+          }
+            
+    
+      }
+    }
+    
+    .apartment-price p {
+      font-family: 'Bentham', serif;
+    }
+    
+    span {
+      display: inline-block;
+      height: 50px;
+      font-family: 'Suranna', serif;
+      font-size: 34px;
+    }
 }
 
-  .apartment-img {
-      width: 80%;
-    img {
-        border-radius: 7px 0 0 7px;
+  
+/* Media Queries */
+
+@media (max-width: 600px) {
+    .apartments-container{
+        .wrapper {
+            min-width: 300px;
+        }
     }
-  }
-  
-  .apartment-info {
-    width: 70%;
-    border-radius: 0 7px 10px 7px;
-    background-color: $gallery-primary-font;
-    
-    .apartment-text{
-        
-        .booking-extra {
-            color: black;
-            text-decoration: underline;
-        }
-
-        h1 {
-            height: 30%;
-            font-size: 18px;
-            color: #474747;
-            font-family: 'Bentham', serif;
-        }
-
-        h2 {
-            margin: 0 0 47px 38px;
-            font-size: 13px;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 400;
-            text-transform: uppercase;
-            color: #d2d2d2;
-            letter-spacing: 0.2em;
-        }
-
-        p {
-            margin: 0 0 0 38px;
-            font-family: 'Playfair Display', serif;
-            color: #8d8d8d;
-            line-height: 1.7em;
-            font-size: 15px;
-            font-weight: lighter;
-            overflow: hidden;
-        }
-          
-
-    }
-  }
-  
-  .apartment-price p {
-    font-family: 'Bentham', serif;
-  }
-  
-  span {
-    display: inline-block;
-    height: 50px;
-    font-family: 'Suranna', serif;
-    font-size: 34px;
-  }
-  
+}

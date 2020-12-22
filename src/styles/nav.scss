@@ -7,11 +7,12 @@
     font-family: Roboto;
     font-weight: bold;
     box-shadow: 1px 5px #64626210;
+    width: 100%;
 }
 
 .navbar__title {
     margin-right: auto;
-    font-size: 150%;
+    font-size: 1.5em;
     padding: 12px 16px;
     color: $gallery-primary-font;
 }
@@ -19,5 +20,6 @@
 .navbar__item {
     padding: 16px 16px;
     cursor: pointer;
+    font-size: 1em;
     vertical-align: middle;
 }

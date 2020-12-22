@@ -6,9 +6,10 @@ import * as ApartmentsActions from "../actions/ApartmentsActions";
 
 function* asynchFetchApartmentsRequest(){
     try {
-        const apartments = yield call(()=>axios
-            .get(API_REQUEST_URL));
-            console.log(apartments);
+        const apartments = yield call(()=>
+            axios
+            .get(API_REQUEST_URL)
+            );
         yield put(ApartmentsActions.fetchApartmentsSuccess(apartments.data))
     } catch (error) {
         yield put(ApartmentsActions.fetchApartmentsFailure(error))
