@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 import { connect } from "react-redux";
-import { fetchApartments } from "../actions/ApartmentsActions";
-import { GuineaPigsContainer } from "../components/photoSlider";
+import { fetchApartmentsRequest } from "../actions/ApartmentsActions";
 import style from "../styles/apartmentContainer.scss";
 
-function ApartmentContainer({ apartmentsData, fetchApartments }) {
+function ApartmentContainer({ apartmentsData, fetchApartmentsRequest }) {
     useEffect(() => {
-        fetchApartments()
+        fetchApartmentsRequest()
     }, [])
     return apartmentsData.loading ?
         (<h3>Loading</h3>)
@@ -62,7 +61,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchApartments: () => dispatch(fetchApartments())
+        fetchApartmentsRequest: () => dispatch(fetchApartmentsRequest())
     }
 }
 export default connect(

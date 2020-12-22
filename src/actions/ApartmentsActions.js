@@ -1,25 +1,4 @@
-import  axios from "axios";
 import * as Actions from "../constants/ActionTypes";
-import { API_REQUEST_URL } from "../constants/APIConstants";
-
-export const fetchApartments = () => {
-    return (dispatch) => {
-      dispatch(fetchApartmentsRequest())
-      axios
-        .get(API_REQUEST_URL)
-        .then(response => {
-          // response.data is the apartments
-          const apartments = response.data
-          console.log(apartments.offers[0]);
-          dispatch(fetchApartmentsSuccess(apartments))
-        })
-        .catch(error => {
-          // error.message is the error message
-          const erroMsg = error.message;
-          dispatch(fetchApartmentsFailure(erroMsg))
-        })
-    }
-  }
   
   export const fetchApartmentsRequest = () => {
     return {
