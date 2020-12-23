@@ -1,4 +1,3 @@
-
 import * as Actions from "../constants/ActionTypes";
 
 const initialState = {

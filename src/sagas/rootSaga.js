@@ -1,4 +1,4 @@
-import { all, put } from "redux-saga/effects";
+import { all } from "redux-saga/effects";
 import fetchApartmentsSaga from "./fetchApartmentsSaga";
 
 function* rootSaga() {
