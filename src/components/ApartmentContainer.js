@@ -44,6 +44,7 @@ function ApartmentContainer({ apartmentsData, fetchApartmentsRequest }) {
                                                 <p>{apartment.rating.count}<b> Reviews</b></p>
                                             </div>
                                             <div className='apt-col'>
+                                                <p>  <b>Location</b> {apartment.location.name}</p>
                                                 <p>  <b>Apartment Type</b> {apartment.details.apartmentTypeTitle}</p>
                                                 <p>  {apartment.details.bedroomsCount}<b>  BedRooms</b></p>
                                                 <p>  {apartment.details.guestsCount}<b>  Guests</b></p>
