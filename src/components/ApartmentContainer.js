@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from "react-redux";
 import { fetchApartmentsRequest } from "../actions/ApartmentsActions";
-import style from "../styles/apartmentContainer.scss";
+import "../styles/apartmentContainer.scss";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import SimpleImageSlider from "react-simple-image-slider";
