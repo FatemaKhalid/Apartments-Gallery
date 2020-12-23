@@ -69,9 +69,6 @@ function ApartmentContainer({ apartmentsData, fetchApartmentsRequest }) {
                 </div>
             )
 }
-function scaleRating(rating) {
-    return rating/10;
-}
 
 function getProperPhotos(photos) {
     let ph=[];

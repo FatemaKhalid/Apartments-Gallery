@@ -19,7 +19,7 @@ function Footer() {
 			<div className="footer-left">
 
 				<p className="footer-links">
-					<a>Home</a>
+					<a>Help</a>
 					<a>About</a>
 					<a>Contact</a>
 				</p>
