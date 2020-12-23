@@ -28,14 +28,57 @@
     .apt-row-data{
         display: flex;
         flex-direction: row;
+        .apt-col{
+            width: 60%;
+        }
     }
 
+    .card{
+        width: 25rem;
+        border-radius: 1rem;
+        background: white;
+        box-shadow: 4px 4px 15px rgba(#000, 0.15);
+        position : relative;
+        color: #434343;
+    }
+
+
+    .card::before{
+        position: absolute;
+        top:1rem;
+        right:8rem;
+        content: '';
+        background: $gallery-primary;
+        height: 28px;
+        width: 28px;
+        transform : rotate(45deg);
+    }
+  
+    .card::after{
+        position: absolute;
+        content: attr(data-label);
+        right: 7em;
+        padding: 0.5rem;
+        width: 10rem;
+        background: $gallery-primary;
+        color: white;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+    }
+
+    .card-inst::before{
+        top: 4rem;
+    }
+    .card-inst::after{
+        top: 3rem;
+    }
     .rating-circ{
-        width: 50%;
 
         .CircularProgressbar{
             font-size:0.5em;
         }
+
         .CircularProgressbar-trail {
             stroke: $rating-trail;
             stroke-width: 1em;
@@ -51,10 +94,51 @@
         }
 
     }
+
+    .rating-circ-red{
+        .CircularProgressbar{
+            font-size:0.5em;
+        }
+
+        .CircularProgressbar-trail {
+            stroke: $rating-low;
+            stroke-width: 1em;
+        }
+
+        .CircularProgressbar-path{
+            stroke: $rating-low;
+            stroke-width: 1em;
+        }
+
+        .CircularProgressbar-text {
+            fill: $rating-low;
+        }
+
+    }
+    .rating-circ-green{
+
+        .CircularProgressbar{
+            font-size:0.5em;
+        }
+
+        .CircularProgressbar-trail {
+            stroke: $rating-trail;
+            stroke-width: 1em;
+        }
+        .CircularProgressbar-path{
+            stroke: $rating-high;
+            stroke-width: 1em;
+        }
+
+        .CircularProgressbar-text {
+            fill: $rating-high;
+        }
+
+    }
   
     .apartment-img {
         width: 80%;
-      img {
+      .slider-img {
           width: 100%;
           border-radius: 7px 0 0 7px;
       }
@@ -93,6 +177,7 @@
     
     .apartment-price p {
       font-family: 'Bentham', serif;
+      text-align: left;
     }
     
     span {

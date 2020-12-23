@@ -19,9 +19,9 @@ function Footer() {
 			<div className="footer-left">
 
 				<p className="footer-links">
-					<a className="link-1" href={''}>Home</a>
-					<a href={''}>About</a>
-					<a href={''}>Contact</a>
+					<a>Home</a>
+					<a>About</a>
+					<a>Contact</a>
 				</p>
 
 				<p className="signature">Made with &hearts; by Fatma <br/> &copy; 2020</p>

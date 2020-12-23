@@ -4,12 +4,13 @@ import { fetchApartmentsRequest } from "../actions/ApartmentsActions";
 import style from "../styles/apartmentContainer.scss";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import SimpleImageSlider from "react-simple-image-slider";
+
 
 function ApartmentContainer({ apartmentsData, fetchApartmentsRequest }) {
     useEffect(() => {
         fetchApartmentsRequest()
     }, [])
-    const percentage = 66;
     return apartmentsData.loading ?
         (<h3>Loading</h3>)
         : apartmentsData.error ? (
@@ -23,15 +24,23 @@ function ApartmentContainer({ apartmentsData, fetchApartmentsRequest }) {
 
                             <div className="wrapper" key={apartment.id}>
                                 <div className="apt-row apartment-img">
-                                    <img src={apartment.photos[0].t} />
-                                    {/* TODO: BUILD PHOTOS SLIDER */}
+                                <SimpleImageSlider
+                                className='slider-img'
+                                        width={350}
+                                        height={200}
+                                        showNavs={true}
+                                        images={getProperPhotos(apartment.photos)}
+                                    />
                                 </div>
                                 <div className="apt-row apartment-info">
                                     <div className="apartment-text">
                                         <h1>{apartment.details.name}</h1>
                                         <div className='apt-row-data'>
-                                            <div className='apt-col rating-circ'>
-                                                <CircularProgressbar value={apartment.rating.value} text={`${apartment.rating.value/10}`}/>
+                                            <div className='rating-circ'
+                                                className={`${apartment.rating.value>50 ? "rating-circ-green" : "rating-circ-red"}`} >
+                                                <CircularProgressbar 
+                                                value={apartment.rating.value} 
+                                                text={`${apartment.rating.value/10}`}/>
                                                 <p>{apartment.rating.count}<b> Reviews</b></p>
                                             </div>
                                             <div className='apt-col'>
@@ -40,11 +49,11 @@ function ApartmentContainer({ apartmentsData, fetchApartmentsRequest }) {
                                                 <p> <b>Number of Guests</b> {apartment.details.guestsCount}</p>
                                                 {apartment.details.ExpressBookable ?
                                                     ('') : 
-                                                    (<p className='booking-extra'><b>Express Booking</b></p>)
+                                                    (<div className="card" data-label="Express Booking"/>)
                                                 }
                                                 {apartment.details.InstantBookable ?
                                                     ('') :
-                                                    (<p className='booking-extra'><b>Available for Instant Booking</b></p>)
+                                                    (<div className="card card-inst" data-label="Instant Booking"/>)
                                                 }
                                             </div>
                                         </div>
@@ -59,7 +68,16 @@ function ApartmentContainer({ apartmentsData, fetchApartmentsRequest }) {
                 </div>
             )
 }
+function scaleRating(rating) {
+    return rating/10;
+}
 
+function getProperPhotos(photos) {
+    let ph=[];
+    photos.forEach(el => ph.push({url:el.t}));
+    console.log(ph);
+    return ph;
+}
 const mapStateToProps = state => {
     // console.log(state.apartments);
     return {
