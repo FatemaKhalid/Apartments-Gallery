@@ -44,9 +44,9 @@ function ApartmentContainer({ apartmentsData, fetchApartmentsRequest }) {
                                                 <p>{apartment.rating.count}<b> Reviews</b></p>
                                             </div>
                                             <div className='apt-col'>
-                                                <p> <b>Apartment Type</b> {apartment.details.apartmentTypeTitle}</p>
-                                                <p> <b>Number of BedRooms</b> {apartment.details.bedroomsCount}</p>
-                                                <p> <b>Number of Guests</b> {apartment.details.guestsCount}</p>
+                                                <p>  <b>Apartment Type</b> {apartment.details.apartmentTypeTitle}</p>
+                                                <p>  {apartment.details.bedroomsCount}<b>  BedRooms</b></p>
+                                                <p>  {apartment.details.guestsCount}<b>  Guests</b></p>
                                                 {apartment.details.ExpressBookable ?
                                                     ('') : 
                                                     (<div className="card" data-label="Express Booking"/>)
@@ -75,11 +75,9 @@ function scaleRating(rating) {
 function getProperPhotos(photos) {
     let ph=[];
     photos.forEach(el => ph.push({url:el.t}));
-    console.log(ph);
     return ph;
 }
 const mapStateToProps = state => {
-    // console.log(state.apartments);
     return {
         apartmentsData: state.apartments
     }

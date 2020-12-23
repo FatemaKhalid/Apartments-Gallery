@@ -10,6 +10,7 @@ function* asynchFetchApartmentsRequest(){
             axios
             .get(API_REQUEST_URL)
             );
+            console.log(apartments.data.offers[0]);
         yield put(ApartmentsActions.fetchApartmentsSuccess(apartments.data))
     } catch (error) {
         yield put(ApartmentsActions.fetchApartmentsFailure(error))
